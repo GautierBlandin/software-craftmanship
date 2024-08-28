@@ -147,6 +147,8 @@ Let's zoom in on the `chat` library:
 │   │   ├── chat.repository.fake.ts
 │   ├── infrastructure
 │   │   ├── chat.repository.http.ts
+│   ├── composition-root
+│   │   ├── chat.repository.singleton.ts
 │   ├── index.ts
 ```
 
