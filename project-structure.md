@@ -63,54 +63,67 @@ Libraries are of two types:
 Domain-oriented libraries correspond to what DDD calls a bounded context. They should be
 structured following hexagonal architecture.
 
+#### Server-side folder structure
+
 Let's zoom in on the `threads` library:
 
 ```
 .
 ├── src
 │   ├── domain
-│   │   ├── thread.ts
-│   │   ├── message.ts
+│   │   ├── thread.aggregate.ts
+│   │   ├── thread.aggregate.spec.ts
+│   │   ├── message.value-object.ts
 │   ├── use-cases
 │   │   ├── create-thread.ts
+│   │   ├── create-thread.spec.ts
 │   │   ├── list-threads.ts
+│   │   ├── list-threads.spec.ts
 │   │   ├── post-message.ts
+│   │   ├── post-message.spec.ts
 │   │   ├── archive-thread.ts
+│   │   ├── archive-thread.spec.ts
 │   ├── ports
 │   │   ├── threads.repository.ts
 │   │   ├── threads.repository.fake.ts
+│   │   ├── threads.repository.fake.spec.ts
 │   ├── infrastructure
 │   │   ├── threads.repository.postgres.ts
+│   │   ├── threads.repository.postgres.spec.ts
 │   ├── adapters
 │   │   ├── threads.controller.ts
 │   ├── threads.module.ts
 │   ├── index.ts
 ```
 
-#### Domain
+##### Domain
 Domain is the core of the application. It contains domain-specific, framework-agnostic representation
 of business entities and services.
 
 Avoid having anemic domain models (i.e dumb data containers). Instead, prefer the Aggregate pattern, where an
 aggregate is responsible for maintaining its business invariants.
 
-#### Use-cases
+##### Use-cases
 Use-cases are the entry points of the application. They do not depend on external adapters such as HTTP or SQL directly,
 but they interact with them through ports. They represent actions that users or external systems can perform.
 
-#### Ports
+##### Ports
 Ports are interfaces that enable the use-cases to interact with the outside world. In pure hexagonal lingo, the ports of the
 ports directory are primarily _driven_ ports. They can be used by the use-cases to load and persist data, send messages to
 queues, etc.
 
-#### Infrastructure
+##### Infrastructure
 Infrastructure is the implementation of the ports. For example, where the threads repository is the interface that is used
 by use-cases to load and persist threads, the implementation may use Postgres, DynamoDB, or other database technologies
 to actually perform the storage.
 
-#### Adapters
+##### Adapters
 Adapters are the _driving_ ports of the application. They are responsible for translating incoming requests (HTTP, gRPC, 
 SQS, etc.) into use-cases input, and output from use-cases into outgoing responses.
+
+#### Client-side folder structure
+
+
 
 ### Supporting libraries
 
