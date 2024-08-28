@@ -63,7 +63,14 @@ Libraries are of two types:
 Domain-oriented libraries correspond to what DDD calls a bounded context. They should be
 structured following hexagonal architecture.
 
-#### Server-side folder structure
+### Supporting libraries
+
+Supporting libraries are shared libraries that can be used by multiple domain-oriented libraries.
+Common examples are:
+- Shared UI components that are purely presentational, and help provide a consistent look and feel
+- Shared utils or providers that are purely technical and not related to the domain
+
+### Server-side libraries folder structure
 
 Let's zoom in on the `threads` library:
 
@@ -96,32 +103,45 @@ Let's zoom in on the `threads` library:
 │   ├── index.ts
 ```
 
-##### Domain
+#### Domain
 Domain is the core of the application. It contains domain-specific, framework-agnostic representation
 of business entities and services.
 
 Avoid having anemic domain models (i.e dumb data containers). Instead, prefer the Aggregate pattern, where an
 aggregate is responsible for maintaining its business invariants.
 
-##### Use-cases
+#### Use-cases
 Use-cases are the entry points of the application. They do not depend on external adapters such as HTTP or SQL directly,
 but they interact with them through ports. They represent actions that users or external systems can perform.
 
-##### Ports
+#### Ports
 Ports are interfaces that enable the use-cases to interact with the outside world. In pure hexagonal lingo, the ports of the
 ports directory are primarily _driven_ ports. They can be used by the use-cases to load and persist data, send messages to
 queues, etc.
 
-##### Infrastructure
+#### Infrastructure
 Infrastructure is the implementation of the ports. For example, where the threads repository is the interface that is used
 by use-cases to load and persist threads, the implementation may use Postgres, DynamoDB, or other database technologies
 to actually perform the storage.
 
-##### Adapters
+#### Adapters
 Adapters are the _driving_ ports of the application. They are responsible for translating incoming requests (HTTP, gRPC, 
 SQS, etc.) into use-cases input, and output from use-cases into outgoing responses.
 
-#### Client-side folder structure
+#### Dependency graph
+
+```mermaid
+graph TD
+    useCases[use-cases] --> domain
+    useCases --> ports
+    infrastructure -.implements.-> ports
+    ports --> domain
+    adapters --> useCases
+    module --> adapters
+    module --> infrastructure
+```
+
+### Client-side libraries folder structure
 
 Let's zoom in on the `chat` library:
 
@@ -152,9 +172,16 @@ Let's zoom in on the `chat` library:
 │   ├── index.ts
 ```
 
-### Supporting libraries
+#### Dependency graph
 
-Supporting libraries are shared libraries that can be used by multiple domain-oriented libraries.
-Common examples are:
-- Shared UI components that are purely presentational, and help provide a consistent look and feel
-- Shared utils or providers that are purely technical and not related to the domain
+```mermaid
+graph TD
+    features-->domain
+    features-->compositionRoot[composition-root]
+    features-->ui
+    ui-->domain
+    ports-->domain
+    compositionRoot-->ports
+    compositionRoot-->infrastructure
+    infrastructure -.implements.-> ports
+```
