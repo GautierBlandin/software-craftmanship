@@ -11,9 +11,9 @@ Here is the gist of it:
 ```mermaid
 graph LR
 
-Green[Test Passes] --Write a failing test \n to drive the implementation--> Red[Test Fails]
-Red --Write minimal \n implementation code-->Green
-Green --Refactor implementation \n and tests--> Green
+Green[Test Passes] --1. Write a failing test \n to drive the implementation--> Red[Test Fails]
+Red --2. Write minimal \n implementation code-->Green
+Green --3. Refactor implementation \n and tests--> Green
 
 style Red fill:#DC143C,stroke:#DC143C
 style Green fill:#50C878,stroke:#50C878
