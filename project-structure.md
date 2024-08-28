@@ -123,7 +123,32 @@ SQS, etc.) into use-cases input, and output from use-cases into outgoing respons
 
 #### Client-side folder structure
 
+Let's zoom in on the `chat` library:
 
+```
+.
+├── src
+│   ├── domain
+│   │   ├── message.ts
+│   │   ├── chunck.ts
+│   │   ├── thread.ts
+│   ├── features
+│   │   ├── chat.tsx
+│   │   ├── chat.ct.tsx
+│   │   ├── chat.store.ts
+│   │   ├── chat.hook.ts
+│   │   ├── chat.hook.spec.ts
+│   │   ├── chat.page.tsx
+│   ├── ui
+│   │   ├── ChatInput.tsx
+│   │   ├── ChatMessage.tsx
+│   ├── ports
+│   │   ├── chat.repository.ts
+│   │   ├── chat.repository.fake.ts
+│   ├── infrastructure
+│   │   ├── chat.repository.http.ts
+│   ├── index.ts
+```
 
 ### Supporting libraries
 
