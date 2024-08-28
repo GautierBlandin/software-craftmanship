@@ -1,9 +1,5 @@
 # Process
 
-References:
-- https://www.youtube.com/watch?v=kDfuP88hVgU
-- https://www.youtube.com/watch?v=QVpu19o6TsU
-
 What is time-consuming when developing software is hesitation. The bottleneck of software development is the discovery of requirements,
 and hesitation when writing implementation. A good process should enable the developer to avoid having to hesitate, and separate the
 different concerns of the software development process.
@@ -44,3 +40,7 @@ style Green fill:#50C878,stroke:#50C878
 
 - A test is a question about the domain
 - A test helps archeologists to understand the code, it is documentation
+
+### References:
+- https://www.youtube.com/watch?v=kDfuP88hVgU
+- https://www.youtube.com/watch?v=QVpu19o6TsU
