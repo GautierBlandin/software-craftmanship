@@ -1,8 +1,6 @@
 # Project structure
 
-The following assumptions are made:
-- The project is a monorepo
-- Nx is used to manage it
+Recommended project structures for frontend and backend applications.
 
 ## Example
 
