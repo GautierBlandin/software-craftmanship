@@ -6,7 +6,7 @@ The following assumptions are made:
 
 ## Example
 
-Here is a (simplified) example project structure
+Here is an example project structure
 
 ```
 .
