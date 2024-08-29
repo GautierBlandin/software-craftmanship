@@ -39,6 +39,11 @@ A practical guide to initialize a new project using best-practices.
 
 ## Frontend (React)
 
+### CSS
+
+- Initialize TailwindCSS
+- Add a theme file. See `colors.md` for more details.
+
 ### State management
 
 - Use Zustand or Valtio for reactive state management
