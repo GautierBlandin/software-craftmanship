@@ -35,7 +35,6 @@ A practical guide to initialize a new project using best-practices.
 ### IDE (Webstorm)
 - Enable `run eslint --fix on save`
 - Enable `run prettier on save`
-- Enable `use types from the server` for TypeScript
 
 ## Frontend (React)
 
