@@ -48,11 +48,20 @@ A practical guide to initialize a new project and setup tooling using best-pract
 - Use Zustand or Valtio for reactive state management
 - Use Tanstack Query for data fetching and server synchronization
 
+### REST APIs
+- Use `openapi-typescript` and `openapi-fetch` to get a type-safe API client
+
+### Testing
+
+- Use Playwright for end-to-end and component testing
+- Use vitest for unit testing
+
 ## Backend
 
 ### Web framework
 
 - Use NestJS as a framework
+- Setup Swagger for API documentation: add  the following line to webpack.config.js in NxWebpackPlugin options: `transformers: ['@nestjs/swagger/plugin']`
 - Respect Zalando's [API First principles](https://opensource.zalando.com/restful-api-guidelines/)
 
 ### Persistence
@@ -60,9 +69,9 @@ A practical guide to initialize a new project and setup tooling using best-pract
 - Default to Postgres
 - Consider event sourcing and CQRS
 
-## Testing
+### Testing
 
-- Prefer Vitest over Jest **when possible**
+- Use jest over vitest for compatibility with Nest.
 
 ## Deployment
 
@@ -73,3 +82,7 @@ A practical guide to initialize a new project and setup tooling using best-pract
 ### IaC
 
 - Use Pulumi for IaC
+
+## Project structure
+
+See `project-structure.md` for more details about organizing your codebase.
