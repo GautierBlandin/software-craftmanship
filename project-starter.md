@@ -1,6 +1,6 @@
-# Repo starter notes
+# Project starter guide
 
-A practical guide to initialize a new project using best-practices.
+A practical guide to initialize a new project and setup tooling using best-practices.
 
 ## Project initialization
 
