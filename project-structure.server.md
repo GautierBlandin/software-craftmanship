@@ -116,6 +116,8 @@ Type of files in the domain directory:
 - <aggregate_name>.aggregate.ts: Aggregate roots. These files define aggregates and their behaviors.
 - <aggregate_name>.event.ts: Event types. These files define the events that are emitted by the aggregates.
 - <value_object_name>.value-object.ts: Value objects.
+- <service_name>.service.ts: Domain services that encapsulate business logic that does not interact with external systems,
+  and cannot directly be part of an aggregate.
 
 Example of domain files:
 - thread.aggregate.ts: Defines the Thread aggregate and its behaviors.
@@ -159,6 +161,8 @@ SQS, etc.) into use-cases input, and output from use-cases into outgoing respons
 Example of adapters:
 
 - threads.controller.ts: Defines the ThreadsController that handles incoming requests and delegates them to the use-cases.
+- External providers primarily meant for other bounded contexts, such as an authorization middleware that performs authorization and
+  authentication outside the auth bounded context.
 
 #### Dependency graph
 
