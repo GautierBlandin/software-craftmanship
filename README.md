@@ -11,3 +11,4 @@ documentation of my understanding of software craftsmanship.
 - Style: Code style guidelines for TypeScript and React
 - TDD: Practical and philosophical guide to test-driven development
 - Colors: Recommendation about semantic color naming
+- Event-storming template: A simple excalidraw template for event-storming
