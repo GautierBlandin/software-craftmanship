@@ -10,3 +10,4 @@ documentation of my understanding of software craftsmanship.
 - Project starter: Practical guide to initialize a new project and its tooling
 - Style: Code style guidelines for TypeScript and React
 - TDD: Practical and philosophical guide to test-driven development
+- Colors: Recommendation about semantic color naming
