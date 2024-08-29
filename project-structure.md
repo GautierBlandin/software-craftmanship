@@ -1,6 +1,6 @@
 # Project structure
 
-Recommended project structures for frontend and backend applications.
+Recommended project structures for monorepos.
 
 ## Example
 
@@ -46,6 +46,10 @@ Let's zoom in on the `server` app:
 ├── Dockerfile
 ├── project.json
 ```
+
+It contains just enough code to run the application and deploy it to a docker image,
+as well as a project.json file to configure targets for the app. However, most of the
+code is contained in the libraries, and is simply imported in the app.module.ts file.
 
 ## Libraries
 
