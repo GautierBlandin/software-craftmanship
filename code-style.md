@@ -65,7 +65,7 @@ export function MyComponent({ name }: MyComponentProps) {
   return <div>Hello, {name}!</div>;
 }
 ```
-- Components should have an appropriate role when possible, and an aria-label to help screen readers and e2e tests
+- Components should have an appropriate accessibility role when possible, and an aria-label to help screen readers and e2e tests
 
 ## CSS
 
