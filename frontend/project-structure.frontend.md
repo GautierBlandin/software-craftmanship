@@ -20,15 +20,19 @@ Let's start by looking at the overall folder structure, then we will break it do
 │   │   ├── threads.repository.singleton.ts
 │   ├── features
 │   │   ├── chat
-│   │   │   ├── chat.controller.tsx
-│   │   │   ├── chat.controller.spec.tsx
+│   │   │   ├── chat-input
+│   │   │   │   ├── chat-input.tsx
+│   │   │   │   ├── chat-input.spec.tsx
+│   │   │   ├── chat-messages
+│   │   │   │   ├── chat-messages.tsx
+│   │   │   │   ├── chat-messages.spec.tsx
+│   │   │   ├── chat.tsx
+│   │   │   ├── chat.spec.tsx
 │   │   │   ├── chat.view.tsx
 │   │   │   ├── chat.state.tsx
 │   │   │   ├── chat.presenter.ts
 │   │   │   ├── chat.presenter.spec.ts
 │   │   │   ├── index.ts
-│   │   ├── chat-history
-│   │   ├── chat-page
 │   ├── remote-state
 │   │   ├── use-list-threads.query.tsx
 │   │   ├── use-get-thread.query.tsx
@@ -43,7 +47,7 @@ Let's start by looking at the overall folder structure, then we will break it do
 
 ### Domain
 
-The domain directory contains domain-specific models and services. 
+The domain directory contains domain-specific models and services.
 The domain should not rely on the view framework (React/Vue/Angular), and instead contain framework-agnostic code
 that focus on the modelisation of the business rules.
 
@@ -62,7 +66,7 @@ Providers for the infrastructure.
 
 ### Remote-state
 
-Hooks that enable management of the remote state and its associated meta-state (isLoading, isPending, etc.). 
+Hooks that enable management of the remote state and its associated meta-state (isLoading, isPending, etc.).
 They rely on the ports/infrastructure layers.
 
 ### UI
@@ -71,18 +75,18 @@ Shared, reusable, view-only components.
 
 ### Features
 
-Features make up most of the application. They are then wired-up into the pages of the whole application. Features can 
+Features make up most of the application. They are then wired-up into the pages of the whole application. Features can
 import other features.
 
 Each feature's API should be kept to the absolute minimum possible. The principle of least knowledge is paramount when
-designing feature: A feature's consumer shouldn't need to know anything about the feature's implementation details to 
+designing feature: A feature's consumer shouldn't need to know anything about the feature's implementation details to
 be able to use it.
 
 ## Dependency graph
 
 ```mermaid
 graph TD
-    subgraph "features" 
+    subgraph "features"
         state --> presenter
         controller --> state
         controller --> view
