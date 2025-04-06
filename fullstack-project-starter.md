@@ -1,10 +1,14 @@
 # Project starter guide
 
-A practical and opinionated guide for setting up a full-stack monorepo.
+A practical and opinionated guide for setting up a full-stack typescript monorepo.
+
+## Useful reference
+
+[Good things to setup for largish projects](https://matklad.github.io/2024/03/22/basic-things.html)
 
 ## Project initialization
 
-- Use the appropriate Nx generator to create your project
+Use the appropriate Nx generator to create your project
 
 ## Framework-agnostic steps
 
@@ -55,6 +59,10 @@ A practical and opinionated guide for setting up a full-stack monorepo.
 - Use vitest with react-testing-library for component testing
 - Use vitest for unit testing
 
+### Storybook
+
+Setup storybook to visualize and work on your components in isolation
+
 ## Backend
 
 ### Framework
@@ -65,6 +73,10 @@ A practical and opinionated guide for setting up a full-stack monorepo.
 
 - Unless you have a very good justification for a different persistence system, [just use Postgres](https://mccue.dev/pages/8-16-24-just-use-postgres). If you need it serverless, you can use Neon Serverless Postgres.
 
+### Project structure
+
+See `backend/backend-project-structure.md` for more details about organizing your codebase.
+
 ## Deployment
 
 ### CI
@@ -74,7 +86,3 @@ A practical and opinionated guide for setting up a full-stack monorepo.
 ### IaC
 
 - Default to Pulumi, and consider SST if you are mostly using AWS Serverless.
-
-## Project structure
-
-See `backend/backend-project-structure.md` for more details about organizing your codebase.
