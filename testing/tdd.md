@@ -24,7 +24,6 @@ style Green fill:#50C878,stroke:#50C878
 - Limit your bad faith to three occurrences
 - Start by writing the tests and the solution in the same file
 - Use tests as field notes of your understanding of the problem
-- A green bar is a permission to think, do not think on a red bar
 
 ## Concerns to separate
 
@@ -38,6 +37,7 @@ style Green fill:#50C878,stroke:#50C878
 
 - A test is a question about the domain
 - A test helps archeologists to understand the code, it is documentation
+- A test is a safety net that prevents breakage when we change things
 
 ## Why TDD?
 
