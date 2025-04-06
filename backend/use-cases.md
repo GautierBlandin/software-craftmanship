@@ -13,11 +13,7 @@ interface UseCaseNameOutput {
   // Output parameters for the use-case
 }
 
-export abstract class UseCaseName {
-  abstract execute(input: UseCaseNameInput): Promise<UseCaseNameOutput>;
-}
-
-export class UseCaseNameImpl extends UseCaseName {
+export class UseCaseName {
   async execute(input: UseCaseNameInput): Promise<UseCaseNameOutput> {
     // Implementation of the use-case
   }

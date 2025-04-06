@@ -1,8 +1,8 @@
-# Aggregate
+# Aggregate practical guide
 
-The project follows Domain-Driven Design and therefore the aggregate pattern.
-In order to limit implementation complexity, we have decided against using Event Sourcing, and 
-to only persist the state of the aggregates in the database.
+## Introduction
+
+This is my attempt at a practical implementation of the [aggregate](https://martinfowler.com/bliki/DDD_Aggregate.html) pattern in typescript.
 
 Here are the typical methods found in an aggregate:
 
@@ -48,13 +48,13 @@ sequenceDiagram
   UseCase->>Aggregate: Call command
   Aggregate->>Aggregate: Mutate state
   UseCase ->> Repository: Save new aggregate state
-  UseCase ->> UseCase: (optional) Emit cross-bounded-context event
+  UseCase ->> UseCase: (optional) Emit event
 ```
 
 ## State types
 
 Aggregate states should have a type, with clear allowed transitions. For example,
-a `Thread` aggregate could have the following states:
+a `Thread` aggregate could have the following states transitions:
 
 ```mermaid
 graph TD
