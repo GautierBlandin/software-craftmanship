@@ -25,8 +25,6 @@ Here is an example folder structure:
 │   │   ├── threads
 │   ├── web
 │   │   ├── shared
-│   │   │   ├── ui
-│   │   │   ├── utils
 │   │   ├── auth
 │   │   ├── chat
 ├── package.json
