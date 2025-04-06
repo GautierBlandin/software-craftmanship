@@ -1,5 +1,9 @@
 # Structuring a frontend project
 
+## Disclaimer
+
+March 2025 edit: I mostly stand by this, but it can be simplified and made less heavy in many cases.
+
 ## Folder structure
 
 Let's start by looking at the overall folder structure, then we will break it down.
