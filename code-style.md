@@ -1,6 +1,7 @@
 # Style guide
 
 ## What is more important comes first
+
 Use hoisting !
 
 ```ts
@@ -53,9 +54,28 @@ interface Bar {
 - Do not prefix interface names with `I`. Instead, prefer prefixing implementations with relevant words,
   e.g `DynamoDbUserRepository`, `FakeUserRepository`.
 
+- Components should have an appropriate accessibility role when possible, and an aria-label to help screen readers and e2e tests
+
+## Exports
+
+- Prefer named exports over default exports
+
+## Global imports
+
+- Avoid global imports. For instances, in unit tests files, import directly from `vitest`, e.g
+
+```ts
+import { expect, it, describe } from "vitest";
+```
+
+## CSS
+
+- Avoid using margins. See [this article](https://mxstbr.com/thoughts/margin) as to why
+
 ## React components
 
 - Prefer the `function` keyword for top-level React components, eg:
+
 ```tsx
 interface MyComponentProps {
   name: string;
@@ -64,22 +84,4 @@ interface MyComponentProps {
 export function MyComponent({ name }: MyComponentProps) {
   return <div>Hello, {name}!</div>;
 }
-```
-- Components should have an appropriate accessibility role when possible, and an aria-label to help screen readers and e2e tests
-
-## CSS
-
-- Use Tailwind CSS
-- Avoid using margins. See [this article](https://mxstbr.com/thoughts/margin) as to why
-
-## Exports
-
-- Prefer named exports over default exports
-
-## Testing
-
-- Do not import globals, instead import directly from `vitest`, e.g
-
-```ts
-import { expect, it, describe } from 'vitest';
 ```

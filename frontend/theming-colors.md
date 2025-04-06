@@ -3,16 +3,19 @@
 ## Color naming
 
 Colors should be named as follows:
+
 ```
 [type]-[role]-[prominence]-[interaction]
 ```
 
 Types:
+
 - bg
 - text
 - border
 
 Roles:
+
 - brand
 - neutral
 - error
@@ -20,12 +23,14 @@ Roles:
 - success
 
 Prominences:
+
 - primary
 - secondary
 - tertiary
 - emphasis
 
 Interactions:
+
 - hover
 - focus
 - pressed
@@ -33,7 +38,7 @@ Interactions:
 ## Example tailwind theme
 
 ```js
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 const globalColors = {
   main: colors.cyan,
@@ -42,7 +47,7 @@ const globalColors = {
   error: colors.red,
   success: colors.green,
   warning: colors.amber,
-}
+};
 
 module.exports = {
   colors: globalColors,
@@ -64,9 +69,8 @@ module.exports = {
   },
   ringColor: {
     "main-primary": globalColors.main[600],
-  }
+  },
 };
-
 ```
 
 ## References
