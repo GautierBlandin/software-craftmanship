@@ -1,5 +1,11 @@
 # Error handling
 
+## Disclaimer
+
+March 2025: I need to revise this.
+
+## Content
+
 Error should be thrown explicitly and as early as possible. 
 
 Error handling should generally be done at the boundary of the system (adapter level).
