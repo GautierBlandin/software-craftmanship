@@ -1,14 +1,3 @@
-# Purpose
+Hello and welcome !
 
-This repository contains documentation about software craftsmanship. It is a living
-documentation of my understanding of software craftsmanship.
-
-
-# Content
-
-- Big picture: Small, overarching guidelines
-- Project starter: Practical guide to initialize a new project and its tooling
-- Style: Code style guidelines for TypeScript and React
-- TDD: Practical and philosophical guide to test-driven development
-- Colors: Recommendation about semantic color naming
-- Event-storming template: A simple excalidraw template for event-storming
+This repository is a work in progress (and probably always will be!) of how I perceive software craftmanship. It covers a variety of topics from high-level organizational processes to very low-level details. The references documents include links to books, articles, and videos that I find helpful about a particular topic. The .md docs are personal thoughts about the topic. Feel free to explore !
