@@ -12,20 +12,19 @@ When writing tests, follow these key principles:
 - It's acceptable to exercise a lot of code (e.g., a whole use case), but the specific behavior being validated should be small and focused
 
 ## Test Size
-- Prefer small tests (single process) over medium (single machine) or large tests (distributed)
+- Prefer small tests (single process) over medium (single machine) over large tests (distributed)
 - Small tests should have no I/O operations, no sleeping, and no blocking calls
 
 ## Test Quality
 - Make tests complete: include all information needed to understand how it arrives at its result
 - Make tests concise: exclude distracting or irrelevant information
 - Tests should be hermetic: assume as little as possible about the outside environment
-- Tests should be obvious: contain only the information required to exercise the behavior
-- Avoid flaky tests at all costs - they destroy confidence in the test suite
+- Tests should be obvious: contain only the information required to exercise the behavior, and contain no logic
 
 ## Test API Boundaries
-- Test via public APIs rather than implementation details
+- Test via public APIs, not via implementation details such as private methods
 - Test state, not interactions - focus on what the result is, not how it was achieved
-- Tests should rarely need to change unless requirements change
+- The ideal test is unchanging - it should never change unless the requirements of the system under test change
 
 ## Test Logic and Sharing
 - Don't put logic in tests - tests should be trivially correct upon inspection
