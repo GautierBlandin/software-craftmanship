@@ -3,12 +3,15 @@
 When writing tests, follow these key principles:
 
 ## Test Structure
-- Always write the smallest test possible for the behavior being tested
 - Name tests after the specific behavior being tested, not the method
 - Write clear failure messages that explain what went wrong
 - Test behaviors, not methods - a single method may require multiple tests
 
-## Test Scope and Size
+## Test Scope
+- Always write the smallest test possible for the behavior being tested - this refers to minimizing the code being validated, not the code being executed
+- It's acceptable to exercise a lot of code (e.g., a whole use case), but the specific behavior being validated should be small and focused
+
+## Test Size
 - Prefer small tests (single process) over medium (single machine) or large tests (distributed)
 - Small tests should have no I/O operations, no sleeping, and no blocking calls
 
